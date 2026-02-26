@@ -31,4 +31,11 @@ public class TaskService {
         task.setStatus(status);
         return taskRepository.save(task);
     }
+
+    public long countCompletedTasks() {
+        return taskRepository.findAll()
+                .stream()
+                .filter(task -> task.getStatus() == TaskStatus.DONE)
+                .count();
+    }
 }
