@@ -14,7 +14,6 @@ public class TaskService {
     private TaskRepository taskRepository;
 
     public Task createTask(Task task) {
-        // Par défaut, on peut forcer le statut à TODO à la création
         if (task.getStatus() == null) {
             task.setStatus(TaskStatus.TODO);
         }
